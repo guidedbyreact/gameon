@@ -25,6 +25,22 @@ function closeModal() {
   modalbg.style.display = "none";
 }
 
+// function validate 
+function validate(){
+  let isValid=true;
+  const requiredFields=document.querySelectorAll('.text-control');
+
+  requiredFields.forEach(field => {
+    if (field.value.trim() === "") { 
+        isValid = false; 
+        field.classList.add('invalid'); 
+    } else {
+        field.classList.remove('invalid'); 
+    }
+});
+return isValid
+}
+
 // close modal event listener
 const closeBtn = document.querySelector(".close");
 closeBtn.addEventListener("click", closeModal);

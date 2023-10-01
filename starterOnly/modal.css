@@ -510,6 +510,9 @@ footer {
     margin: 32px auto 10px;
     padding: 12px 35px;
   }
+  .invalid {
+    border: solid red; 
+  }
   .copyrights {
     margin-top: 50px;
     text-align: center;
