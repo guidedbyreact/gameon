@@ -58,7 +58,7 @@
               name="reserve"
               action="index.html"
               method="get"
-              onsubmit="validate();"
+              onsubmit="return validate();"
             >
               <div
                 class="formData">
@@ -207,9 +207,12 @@
           </div>
         </div>
       </div>
+      <div class="confirmationMessage" id="confirmationMessage">
+        Merci ! Votre réservation a été reçue.
+      </div>
     </main>
     <footer>
-      <p class="copyrights">
+      <p cl ass="copyrights">
         Copyright 2014 - 2022, GameOn Inc.
       </p>
     </footer>

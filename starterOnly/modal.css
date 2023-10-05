@@ -226,7 +226,19 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
-/* 
+.invalid {
+  border: 2px solid #e54858; 
+}
+.confirmationMessage {
+  display: none; 
+  text-align: center; 
+  padding: 20px;
+  background-color: #e1f4e5;
+  border: 1px solid #a2d5ac; 
+  margin: 20px 0; 
+  border-radius: 10px;
+}
+  /* 
 input[data-error]::after {
     content: attr(data-error);
     font-size: 0.4em;
@@ -511,7 +523,7 @@ footer {
     padding: 12px 35px;
   }
   .invalid {
-    border: solid red; 
+    border: 2px solid red; 
   }
   .copyrights {
     margin-top: 50px;
