@@ -41,8 +41,12 @@ function closeModal() {
   if (firstName.value.trim() === "") {
       isValid = false;
       firstName.classList.add('invalid');
+      firstName.parentElement.setAttribute("data-error", "Invalid first name");
+      firstName.parentElement.setAttribute("data-error-visible", "true");
   } else {
       firstName.classList.remove('invalid');
+      firstName.parentElement.removeAttribute("data-error");
+      firstName.parentElement.setAttribute("data-error-visible", "false");
   }
 
   /** @type {HTMLInputElement} 
@@ -50,10 +54,14 @@ function closeModal() {
   */
   const lastName = document.getElementById('last');
   if (lastName.value.trim() === "") {
-      isValid = false;
-      lastName.classList.add('invalid');
+    isValid = false;
+    lastName.classList.add('invalid');
+    lastName.parentElement.setAttribute("data-error", "Invalid last name");
+    lastName.parentElement.setAttribute("data-error-visible", "true");
   } else {
-      lastName.classList.remove('invalid');
+    lastName.classList.remove('invalid');
+    lastName.parentElement.removeAttribute("data-error");
+    lastName.parentElement.setAttribute("data-error-visible", "false");
   }
 
   /** @type {HTMLInputElement} 
@@ -61,10 +69,14 @@ function closeModal() {
   */
   const email = document.getElementById('email');
   if (email.value.trim() === "") {
-      isValid = false;
-      email.classList.add('invalid');
+    isValid = false;
+    email.classList.add('invalid');
+    email.parentElement.setAttribute("data-error", "Invalid email");
+    email.parentElement.setAttribute("data-error-visible", "true");
   } else {
-      email.classList.remove('invalid');
+    email.classList.remove('invalid');
+    email.parentElement.removeAttribute("data-error");
+    email.parentElement.setAttribute("data-error-visible", "false");
   }
 
   /** @type {HTMLInputElement} 
@@ -72,10 +84,14 @@ function closeModal() {
   */
   const birthdate = document.getElementById('birthdate');
   if (birthdate.value.trim() === "") {
-      isValid = false;
-      birthdate.classList.add('invalid');
+    isValid = false;
+    birthdate.classList.add('invalid');
+    birthdate.parentElement.setAttribute("data-error", "Invalid birtdate");
+    birthdate.parentElement.setAttribute("data-error-visible", "true");
   } else {
-      birthdate.classList.remove('invalid');
+    birthdate.classList.remove('invalid');
+    birthdate.parentElement.removeAttribute("data-error");
+    birthdate.parentElement.setAttribute("data-error-visible", "false");
   }
 
   /** @type {HTMLInputElement} 
@@ -83,10 +99,14 @@ function closeModal() {
   */
   const quantity = document.getElementById('quantity');
   if (quantity.value.trim() === "") {
-      isValid = false;
-      quantity.classList.add('invalid');
+    isValid = false;
+    quantity.classList.add('invalid');
+    quantity.parentElement.setAttribute("data-error", "Invalid quantity");
+    quantity.parentElement.setAttribute("data-error-visible", "true");
   } else {
-      quantity.classList.remove('invalid');
+    quantity.classList.remove('invalid');
+    quantity.parentElement.removeAttribute("data-error");
+    quantity.parentElement.setAttribute("data-error-visible", "false");
   }
 
   /** @type {NodeListOf<HTMLInputElement>}
@@ -94,10 +114,14 @@ function closeModal() {
    */
   const locations = document.querySelectorAll('input[name="location"]');
   if (![...locations].some(location => location.checked)) {
-      isValid = false;
-      locations.forEach(location => location.classList.add('invalid'));
+    isValid = false;
+    locations.classList.add('invalid');
+    locations.parentElement.setAttribute("data-error", "Invalid location");
+    locations.parentElement.setAttribute("data-error-visible", "true");
   } else {
-      locations.forEach(location => location.classList.remove('invalid'));
+    locations.classList.remove('invalid');
+    locations.parentElement.removeAttribute("data-error");
+    locations.parentElement.setAttribute("data-error-visible", "false");
   }
 
   /** @type {HTMLInputElement} 
@@ -105,10 +129,13 @@ function closeModal() {
   */
   const checkbox1 = document.getElementById('checkbox1');
   if (!checkbox1.checked) {
-      isValid = false;
-      checkbox1.classList.add('invalid');
+    checkbox1.classList.add('invalid');
+    checkbox1.parentElement.setAttribute("data-error", "Invalid checkbox1");
+    checkbox1.parentElement.setAttribute("data-error-visible", "true");
   } else {
-      checkbox1.classList.remove('invalid');
+    checkbox1.classList.remove('invalid');
+    checkbox1.parentElement.removeAttribute("data-error");
+    checkbox1.parentElement.setAttribute("data-error-visible", "false");
   }
 
   if (isValid) {
