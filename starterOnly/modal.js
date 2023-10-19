@@ -112,16 +112,14 @@ function closeModal() {
   /** @type {NodeListOf<HTMLInputElement>}
    * validation de la location
    */
-  const locations = document.querySelectorAll('input[name="location"]');
-  if (![...locations].some(location => location.checked)) {
+  const locations = Array.from(document.querySelectorAll('input[name="location"]'));
+  if (!locations.some(location => location.checked)) {
     isValid = false;
-    locations.classList.add('invalid');
-    locations.parentElement.setAttribute("data-error", "Invalid location");
-    locations.parentElement.setAttribute("data-error-visible", "true");
+    locations[0].parentElement.setAttribute("data-error", "Invalid location");
+    locations[0].parentElement.setAttribute("data-error-visible", "true");
   } else {
-    locations.classList.remove('invalid');
-    locations.parentElement.removeAttribute("data-error");
-    locations.parentElement.setAttribute("data-error-visible", "false");
+    locations[0].parentElement.removeAttribute("data-error");
+    locations[0].parentElement.setAttribute("data-error-visible", "false");
   }
 
   /** @type {HTMLInputElement} 
@@ -146,7 +144,7 @@ function closeModal() {
   }
   
 
-  return isValid;
+  return false;
 }
 
 // close modal event listener
@@ -159,5 +157,3 @@ modalbg.addEventListener("click", function(event) {
     closeModal();
   }
 });
-
-
