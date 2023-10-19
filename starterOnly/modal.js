@@ -118,6 +118,7 @@ function closeModal() {
     locations[0].parentElement.setAttribute("data-error", "Invalid location");
     locations[0].parentElement.setAttribute("data-error-visible", "true");
   } else {
+ 
     locations[0].parentElement.removeAttribute("data-error");
     locations[0].parentElement.setAttribute("data-error-visible", "false");
   }
@@ -143,9 +144,20 @@ function closeModal() {
     confirmationMessage.style.display = 'block'; 
   }
   
+  if (isValid) {
+    const confirmationModal = document.querySelector(".confirmation-modal");
+    confirmationModal.style.display = "block"; 
+  }
+  
 
   return false;
 }
+
+/*const confirmationCloseBtn = document.querySelector(".confirmation-modal .close");
+confirmationCloseBtn.addEventListener("click", function() {
+const confirmationModal = document.querySelector(".confirmation-modal");
+confirmationModal.style.display = "none";*/
+
 
 // close modal event listener
 const closeBtn = document.querySelector(".close");
@@ -157,3 +169,6 @@ modalbg.addEventListener("click", function(event) {
     closeModal();
   }
 });
+
+
+
